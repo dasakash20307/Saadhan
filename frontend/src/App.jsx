@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import { ContextWrapper } from "@/AuthContext";
@@ -91,6 +91,20 @@ const SystemPromptVariables = lazy(
 );
 
 export default function App() {
+  useEffect(() => {
+    // Hardcode the tab title
+    document.title = "Saadhan | An community driven AI Tool";
+    // Hardcode the favicon
+    const faviconUrl = "https://i.ibb.co/qMWv6897/Saadhan-Fevicon.png";
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = faviconUrl;
+  }, []);
+
   return (
     <ThemeProvider>
       <Suspense fallback={<FullScreenLoader />}>

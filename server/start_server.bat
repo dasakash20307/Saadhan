@@ -1,0 +1,6 @@
+@echo OFF
+ECHO Activating Conda environment 'anythingllm' and starting server...
+call C:\ProgramData\anaconda3\Scripts\activate.bat C:\Users\Dilasa-AI\.conda\envs\anythingllm
+ECHO Setting Node environment and starting server...
+set NODE_ENV=development
+node index.js

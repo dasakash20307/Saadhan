@@ -1,0 +1,3 @@
+@echo OFF
+ECHO Starting frontend development server...
+yarn dev

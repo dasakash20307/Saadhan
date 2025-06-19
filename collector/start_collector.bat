@@ -1,0 +1,6 @@
+@echo OFF
+ECHO Activating Conda environment...
+call C:\ProgramData\anaconda3\Scripts\activate.bat C:\Users\Dilasa-AI\.conda\envs\anythingllm
+ECHO Setting Node environment and starting Collector with nodemon...
+set NODE_ENV=development
+npx nodemon --ignore hotdir --ignore storage --trace-warnings index.js
